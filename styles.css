@@ -335,3 +335,28 @@ footer a:hover,
   border-color: #e0650d;
   color: #FFFFFF;
 }
+
+#modalLogin .modal-dialog,
+#modalRegister .modal-dialog {
+  max-width: 520px;
+}
+
+#modalLogin .etiqueta-login {
+  min-width: 10rem;
+  font-size: 0.85rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-left: 0.6rem;
+  padding-right: 0.6rem;
+}
+
+#modalLogin .form-control {
+  font-size: 0.9rem;
+  padding: 0.4rem 0.6rem;
+}
+
+#modalLogin .btn-primary {
+  padding: 0.4rem 1rem;
+  font-size: 0.9rem;
+}
