@@ -7,19 +7,71 @@
 */
 
 body {
+  font-family: "Oswald", sans-serif;
   background-color: #F5F5F5;
   color: #333333;
 }
 
-.navbar.navbar-hoops,
+.portada {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  max-height: 900px;
+  overflow: hidden;
+}
+
+.portada-imagen {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+  object-position: center 30%;
+}
+
+.portada-texto {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  padding-left: 6rem;
+  padding-right: 2rem;
+  box-sizing: border-box;
+}
+
+.portada-eslogan {
+  margin: 0;
+  font-family: "Oswald", sans-serif;
+  font-size: clamp(1.5rem, 4vw, 5rem);
+  font-weight: 700;
+  color: #FFFFFF;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+  max-width: 14ch;
+  line-height: 1.2;
+  letter-spacing: 0.02em;
+}
+
+.navbar.barra-principal,
 .navbar.navbar-light.bg-light {
-  background-color: #0F2A44 !important;
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", sans-serif;
+  background-color: #0A2238 !important;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  padding-top: 0.6rem;
+  padding-bottom: 0.6rem;
 }
 
 .navbar .navbar-brand,
 .navbar .nav-link,
 .navbar .navbar-text {
   color: #FFFFFF !important;
+}
+
+.navbar .nav-link {
+  transition: color 0.2s ease;
+  padding-left: 0.75rem;
+  padding-right: 0.75rem;
 }
 
 .navbar .nav-link:hover,
@@ -41,77 +93,245 @@ body {
   filter: invert(1);
 }
 
-.navbar-logo-wrap {
+.contenedor-logo {
   display: flex;
   align-items: center;
   margin-right: 1rem;
 }
 
-.navbar .navbar-logo {
-  height: 40px;
+.navbar .logo {
+  height: 62px;
   width: auto;
   display: block;
 }
-.dropdown-menu{
+.dropdown-menu {
   display: block;
   opacity: 0;
   transform: translateY(-10px);
   transition: opacity 0.25s ease, transform 0.25s ease;
   pointer-events: none;
+  box-shadow: 0 4px 14px rgba(10, 34, 56, 0.2);
+  border: 1px solid rgba(10, 34, 56, 0.12);
+  border-radius: 0.375rem;
 }
-.navbar .dropdown:hover .dropdown-menu{
+
+.navbar .dropdown:hover .dropdown-menu {
   opacity: 1;
   transform: translateY(0);
   pointer-events: auto;
 }
+
+.dropdown-item {
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.dropdown-item:hover,
+.dropdown-item:focus {
+  background-color: rgba(249, 115, 22, 0.15);
+  color: #F97316;
+}
+
 h1, h2, h3, .h1, .h2, .h3,
-.page-title {
+.titulo-pagina {
   color: #0F2A44;
 }
 
-.btn-hoops,
+.boton-principal,
 .btn-primary {
   background-color: #F97316;
   border-color: #F97316;
   color: #FFFFFF;
 }
 
-.btn-hoops:hover,
+.boton-principal:hover,
 .btn-primary:hover {
   background-color: #e0650d;
   border-color: #e0650d;
   color: #FFFFFF;
 }
 
-.price {
+.precio {
   color: #F97316;
   font-weight: 600;
 }
 
 .card,
-.card-product {
+.tarjeta-producto {
   background-color: #FFFFFF;
   border: 1px solid rgba(0, 0, 0, 0.08);
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06);
 }
 
 .card .card-title,
-.card-product .card-title {
+.tarjeta-producto .card-title {
   color: #0F2A44;
 }
 
+
 footer,
-.footer {
+.pie-pagina {
   background-color: #0F2A44;
   color: #FFFFFF;
 }
 
 footer a,
-.footer a {
+.pie-pagina a {
   color: #FFFFFF;
 }
 
 footer a:hover,
-.footer a:hover {
+.pie-pagina a:hover {
   color: #F97316;
+}
+
+.promos {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.promo-banner {
+  position: relative;
+  width: 50%;
+  flex: 0 0 50%;
+  overflow: hidden;
+  min-height: 320px;
+}
+
+@media (max-width: 767.98px) {
+  .promo-banner {
+    width: 100%;
+    flex: 0 0 100%;
+  }
+}
+
+.promo-banner img {
+  width: 100%;
+  display: block;
+  min-height: 320px;
+  max-height: 50vh;
+  object-fit: cover;
+  object-position: center;
+}
+
+.promo-banner-texto {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  padding: 2rem 2.5rem;
+  background: linear-gradient(to top, rgba(15, 42, 68, 0.9), transparent);
+  color: #FFFFFF;
+}
+
+.promo-banner-texto h4 {
+  margin: 0 0 0.75rem 0;
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #FFFFFF;
+  letter-spacing: 0.02em;
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.4);
+}
+
+.promo-banner-texto .btn {
+  padding: 0.5rem 1.25rem;
+  font-weight: 600;
+  border-radius: 0.375rem;
+  background-color: #FFFFFF;
+  color: #333333;
+  border: none;
+  text-decoration: none;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.promo-banner-texto .btn:hover {
+  background-color: #F97316;
+  color: #FFFFFF;
+}
+
+.productos {
+  background-color: #F5F5F5;
+}
+
+.productos .d-flex.justify-content-between {
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.productos h3 {
+  margin: 0;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #0F2A44;
+}
+
+.productos .d-flex a {
+  color: #0F2A44;
+  font-weight: 600;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.productos .d-flex a:hover {
+  color: #F97316;
+}
+
+.producto-card {
+  background-color: #FFFFFF;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  border-radius: 0.5rem;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+  transition: box-shadow 0.25s ease, transform 0.25s ease;
+  height: 100%;
+}
+
+.producto-card:hover {
+  box-shadow: 0 8px 24px rgba(15, 42, 68, 0.12);
+  transform: translateY(-4px);
+}
+
+.producto-card .card-img-top {
+  width: 100%;
+  height: 240px;
+  object-fit: contain;
+  object-position: center;
+  background-color: #F5F5F5;
+}
+
+.producto-card .card-body {
+  padding: 1.25rem;
+}
+
+.producto-card .card-body h5 {
+  margin: 0 0 0.5rem 0;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #0F2A44;
+}
+
+.producto-card .card-body p {
+  margin: 0;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #F97316;
+}
+
+.producto-card .card-body .btn {
+  margin-top: 0.75rem;
+  width: 100%;
+  padding: 0.5rem 1rem;
+  font-weight: 600;
+  background-color: #F97316;
+  border-color: #F97316;
+  color: #FFFFFF;
+  border-radius: 0.375rem;
+  transition: background-color 0.2s ease, border-color 0.2s ease;
+}
+
+.producto-card .card-body .btn:hover {
+  background-color: #e0650d;
+  border-color: #e0650d;
+  color: #FFFFFF;
 }
