@@ -448,3 +448,8 @@ body.pagina-carrito {
 .accordion-button::after {
   filter: none;
 }
+
+.orders-subtitle {
+  color: #6b9fd8;
+  font-size: 1rem;
+}
